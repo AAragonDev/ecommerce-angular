@@ -1,0 +1,56 @@
+@if(isAdminLoggedIn){
+  <header class="text-gray-600 body-font bg-gray-50 border-b border-gray-200">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" 
+      routerLink="/"   ng-reflect-router-link="/"   href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Ecommerce</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" routerLink="/admin/ordenes" routerLinkActive="active">Ordenes</a>
+        <a class="mr-5 hover:text-gray-900"routerLink="/admin/usuarios" routerLinkActive="active">Usuarios</a>
+        <a class="mr-5 hover:text-gray-900" routerLink="/admin/productos" routerLinkActive="active">Productos</a>
+        <a class="mr-5 hover:text-gray-900" routerLink="/admin/categorias" routerLinkActive="active">Categorias</a>
+        <a class="mr-5 hover:text-gray-900" routerLinkActive="active"  (click)="logout()">Salir</a>
+        </nav>
+    </div>
+  </header>
+}@else if (isUserLoggedIn) {
+  <header class="text-gray-600 body-font bg-gray-50 border-b border-gray-200">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" 
+      routerLink="/"   ng-reflect-router-link="/"   href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Ecommerce</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" routerLink="/user/my-orders"   routerLinkActive="active" >Mis ordenes</a>
+        <a class="mr-5 hover:text-gray-900" routerLink="/user/cart"   routerLinkActive="active" >Carrito</a>
+        <a class="mr-5 hover:text-gray-900" routerLinkActive="active"  (click)="logout()">Salir</a>
+        </nav>
+    </div>
+  </header>
+}@else if (!isAdminLoggedIn && !isUserLoggedIn) {
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" 
+      routerLink="/"   ng-reflect-router-link="/"   href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Ecommerce</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" routerLink="/acceder"   ng-reflect-router-link="acceder"   href="/access">Iniciar sesión</a>
+        <a class="mr-5 hover:text-gray-900" routerLink="/registrar" ng-reflect-router-link="registrar" href="/register">Registrar</a>
+        </nav>
+    </div>
+  </header>
+}
+
+
+  

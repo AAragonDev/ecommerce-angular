@@ -1,0 +1,43 @@
+<div class="max-w-md mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Crear Producto</h2>
+    <form class=" bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" [formGroup]="postProductForm">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="category">Categoría:</label>
+            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="category" formControlName="categoryId"  name="category" required >
+              <option value="" disabled selected>Selecciona una categoría</option>
+              @for (category of categories; track category) {
+                <option value="{{category.id}}">{{category.name}} </option>
+              }
+              
+            </select>
+          </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nombre:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                 id="name" type="text" placeholder="Nombre del producto" formControlName="name"  name="name" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="description">Descripción:</label>
+          <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="description" placeholder="Descripción del producto" formControlName="description" name="description" required></textarea>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="price">Precio:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                 id="price" type="number" placeholder="Precio del producto" formControlName="price" name="price" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">Cantidad:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                 id="amount" type="number" placeholder="Cantidad del producto" formControlName="amount"  name="amount" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Imagen:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                 id="image" type="file"  name="image" accept="image/x-png,image/gif,image/jpeg ,image/jpg" (change)="onFileSelected($event)">
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                type="submit" (click)="postProduct()">Crear Producto</button>
+      </form>
+</div>

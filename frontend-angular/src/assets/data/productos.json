@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "name": "rtx 360",
+        "description": "placa de video",
+        "price": "200",
+        "cantidad": "5",
+        "imgurl": ["../../assets/img/productos/rtx360.jpeg"],
+        "slug": "rtx-360"
+    },
+    {
+        "id": "2",
+        "name": "memoria ram",
+        "description": "memoria ram kingston fury",
+        "price": "300",
+        "cantidad": "6",
+        "imgurl": ["../../assets/img/productos/memoram.jpg"],
+        "slug": "memoria-ram"
+    },
+    {
+        "id": "3",
+        "name": "intel i7",
+        "description": "procesador intel i7-10700k",
+        "price": "500",
+        "cantidad": "8",
+        "imgurl": ["../../assets/img/productos/inteli7.jpg"],
+        "slug": "intel-i7"
+    }
+]

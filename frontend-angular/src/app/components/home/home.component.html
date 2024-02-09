@@ -1,0 +1,25 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <form [formGroup]="searchForm">
+    <div class="flex items-center justify-center mb-4">
+      <input type="text" formControlName="title" placeholder="Buscar productos..." class="w-full md:w-1/2 lg:w-1/3 border rounded px-3 py-2 mr-2">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="searchProduct()">Buscar</button>
+    </div>
+    </form>
+    <div class="flex flex-wrap -m-4">
+      @for(item of productos; track item){
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden border border-gray-200 bg-gray-50">
+          <img alt="ecommerce" class="object-cover object-center w-full h-full block" [src]="item.processedImage">
+        </a>
+        <div class="mt-4">
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{item.categoryName}}</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">{{item.name}}</h2>
+          <p class="mt-1">Precio: {{item.price}}$</p>
+          <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2" (click)="addProductToCart(item.id)">Agregar al carrito</button>
+        </div>
+      </div>
+    }
+    </div>
+  </div>
+</section>
